@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { BookOpen, ArrowLeft, Award, Calendar, Globe } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -35,40 +36,36 @@ const slideInRight = {
 export default function AuthorPage() {
   const achievements = [
     {
-      year: "[Year]",
-      title: "[Award/Achievement Title]",
-      description: "[Description of the award or achievement and its significance]",
+      year: "2022",
+      title: "Bocas Henry Swanzy Award",
+      description: "Honoured for distinguished service to Caribbean letters",
     },
     {
-      year: "[Year]",
-      title: "[Publication/Recognition]",
-      description: "[Details about major publication or literary recognition]",
+      year: "1970",
+      title: "Published Crick Crack, Monkey",
+      description: "A pioneering novel recognized as West Indian classic literature",
     },
     {
-      year: "[Year]",
-      title: "[Literary Influence]",
-      description: "[Description of impact on literature or society]",
+      year: "1970",
+      title: "First Black Caribbean Woman to Public Major Fiction",
+      description: "Opened doors for future generations of Caribbean female writers",
     },
   ]
 
   const otherWorks = [
     {
-      title: "[Book Title 1]",
-      year: "[Year]",
-      genre: "[Genre]",
-      description: "[Brief description of the work and its themes]",
+      title: "Crick Crack, Monkey",
+      year: "1970",
+      genre: "Coming-of-Age, Postcolonial",
+      description: "A young girl struggles between rural and urban identities in colonial Trinidad.",
+      image: '/crickcrackmonkey.jpeg'
     },
     {
-      title: "[Book Title 2]",
-      year: "[Year]",
-      genre: "[Genre]",
-      description: "[Brief description of the work and its significance]",
-    },
-    {
-      title: "[Book Title 3]",
-      year: "[Year]",
-      genre: "[Genre]",
-      description: "[Brief description of the work and its impact]",
+      title: "One Day, One Day, Congotay",
+      year: "2022",
+      genre: "Political Fiction",
+      description: "A later work examining themes of resistance, nationalism, and community across generations.",
+      image: '/1d1dct.jpg'
     },
   ]
 
@@ -144,7 +141,7 @@ export default function AuthorPage() {
               <CardContent className="p-8 text-center">
                 {/* Author Photo Placeholder */}
                 <motion.div
-                  className="w-48 h-48 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white text-4xl font-bold"
+                  className="w-48 h-48 mx-auto mb-6 bg-gradient-to-br overflow-hidden from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white text-4xl font-bold"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
@@ -159,7 +156,7 @@ export default function AuthorPage() {
                     transition: { duration: 0.5 },
                   }}
                 >
-                  [Author Photo]
+                  <Image width={500} height={400} alt="Merle Hodge" src="/merlehodge.webp" className="h-full" />
                 </motion.div>
                 <motion.h1
                   className="text-3xl font-bold text-gray-900 mb-2"
@@ -167,7 +164,7 @@ export default function AuthorPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                  [Author Name]
+                  Merle Hodge
                 </motion.h1>
                 <motion.p
                   className="text-lg text-gray-600 mb-4"
@@ -175,7 +172,7 @@ export default function AuthorPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
                 >
-                  [Author Title/Description]
+                  Trinidadian Novelist, Critic, and Educator
                 </motion.p>
                 <motion.div className="space-y-2" variants={staggerContainer} initial="initial" animate="animate">
                   <motion.div
@@ -184,7 +181,7 @@ export default function AuthorPage() {
                     whileHover={{ scale: 1.05 }}
                   >
                     <Calendar className="h-4 w-4 mr-2" />
-                    <span>Born: [Birth Year/Date]</span>
+                    <span>Born: 1944</span>
                   </motion.div>
                   <motion.div
                     className="flex items-center justify-center text-gray-600"
@@ -192,7 +189,7 @@ export default function AuthorPage() {
                     whileHover={{ scale: 1.05 }}
                   >
                     <Globe className="h-4 w-4 mr-2" />
-                    <span>[Nationality/Origin]</span>
+                    <span>Trinidad and Tobago</span>
                   </motion.div>
                 </motion.div>
               </CardContent>
@@ -219,20 +216,12 @@ export default function AuthorPage() {
                   animate="animate"
                 >
                   <motion.p variants={fadeInUp}>
-                    [Insert comprehensive author biography here - Include early life, education, and formative
-                    experiences that influenced their writing. Discuss their journey to becoming a published author.]
+                    Merle Hodge was born in 1944 in Curepe, Trinidad, the daughter of an immigration officer. She attended Bishop Anstey High School and earned the prestigious Trinidad and Tobago Girls' Island Scholarship in 1962. This opportunity allowed her to study French at University College, London, where she completed her B.A. in 1965 and her M.Phil. in 1967, focusing on the poetry of Léon Damas.
                   </motion.p>
                   <motion.p variants={fadeInUp}>
-                    [Career development - Detail their writing career, major works, and evolution as an author. Include
-                    information about their writing style and preferred themes.]
+                    After graduating, Hodge traveled across Europe, working various jobs before returning to the Caribbean. She taught French in Trinidad before becoming a lecturer at the University of the West Indies in Jamaica. She later pursued a Ph.D. in French Caribbean Literature. In 1979, Hodge joined the Grenadian revolution under Maurice Bishop, where she worked to reshape national education. She returned to Trinidad in 1983 after Bishop's death and now works in Women and Development Studies at UWI.
                   </motion.p>
-                  <motion.p variants={fadeInUp}>
-                    [Personal philosophy and influences - Discuss what drives their writing, their literary influences,
-                    and their perspective on literature and society.]
-                  </motion.p>
-                  <motion.p variants={fadeInUp}>
-                    [Current work and legacy - Information about their recent projects and their impact on contemporary
-                    literature and readers.]
+                  <motion.p variants={fadeInUp}>Her writing career spans decades, with a strong focus on Caribbean identity, postcolonial struggles, and the female experience. She is also known for her contributions to academic discourse on Caribbean literature and gender.
                   </motion.p>
                 </motion.div>
               </CardContent>
@@ -456,7 +445,7 @@ export default function AuthorPage() {
                       >
                         <BookOpen className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                       </motion.div>
-                      <p className="text-xs text-gray-600">Book Cover Image</p>
+                      <Image alt="Cover Image" src={work.image} width={500} height={1000} className="w-full" />
                     </motion.div>
                   </CardContent>
                 </Card>
@@ -500,8 +489,9 @@ export default function AuthorPage() {
                       transition={{ duration: 0.6, delay: 0.2 }}
                       viewport={{ once: true }}
                     >
-                      [Describe the author's distinctive writing style, recurring themes, and literary techniques.
-                      Explain what makes their work unique and recognizable.]
+                      Hodge writes with deep cultural awareness and emotional insight. Her work often centers on young girls navigating class, race, and gender in colonial or postcolonial Caribbean settings. Her style blends rich narrative detail with authentic voice, and her stories explore how identity is shaped by family, education, and cultural conflict.
+
+                      Recurring themes include colonial legacy, the female experience, personal vs societal expectations, and cultural pride. Hodge often uses childhood as a lens through which larger social issues are explored.
                     </motion.p>
                     <motion.p
                       initial={{ opacity: 0, y: 20 }}
@@ -509,8 +499,9 @@ export default function AuthorPage() {
                       transition={{ duration: 0.6, delay: 0.4 }}
                       viewport={{ once: true }}
                     >
-                      [Discuss the themes they commonly explore and how these relate to contemporary issues and
-                      universal human experiences.]
+                      Merle Hodge often explores themes of identity, cultural conflict, colonialism, gender roles, and the emotional struggles of growing up in a divided society. Her novels commonly follow young female protagonists as they navigate between rural and urban life, tradition and modernity, and the expectations of family and school. These characters face not only external challenges, such as racism or classism, but also internal ones, such as self-doubt and cultural disconnection.
+
+                      These themes remain relevant today. Many young people still experience pressures related to education, family duty, and societal expectations. Hodge's work continues to speak to issues like inequality, cultural identity, and mental health, making her stories relatable across time and geography. Her focus on the Caribbean female experience in particular gives voice to people who have historically been overlooked in literature.
                     </motion.p>
                   </div>
                 </motion.div>
@@ -523,8 +514,7 @@ export default function AuthorPage() {
                       transition={{ duration: 0.6, delay: 0.2 }}
                       viewport={{ once: true }}
                     >
-                      [Explain the author's influence on contemporary literature, other writers, and literary movements.
-                      Discuss their contribution to their genre or literary tradition.]
+                      Merle Hodge's influence is deeply felt in Caribbean literary circles. As the first Black Caribbean woman to publish a major novel, she paved the way for future generations. Her novels are studied globally and have become essential readings in Caribbean literature courses. Through her fiction and academic work, she has helped define the literary voice of postcolonial Caribbean women.
                     </motion.p>
                     <motion.p
                       initial={{ opacity: 0, y: 20 }}
@@ -532,8 +522,9 @@ export default function AuthorPage() {
                       transition={{ duration: 0.6, delay: 0.4 }}
                       viewport={{ once: true }}
                     >
-                      [Include information about critical reception, academic study of their work, and their place in
-                      the literary canon.]
+                      Merle Hodge holds a respected place in the Caribbean literary canon. <i>Crick Crack, Monkey</i> is widely studied in high schools and universities across the Caribbean, praised for its emotional depth, powerful narration, and cultural authenticity. As the first Black Caribbean woman to publish a major novel, Hodge broke barriers and helped open doors for future writers, especially women.
+
+                      Her work has been the subject of academic essays, literary conferences, and critical analysis. Scholars frequently highlight her ability to blend political awareness with personal storytelling. <i>For the Life of Laetitia</i> is often studied for its coming-of-age themes, its treatment of social inequality, and its sensitive handling of mental health and trauma. Hodge's commitment to storytelling rooted in real Caribbean experiences has secured her a lasting impact on Caribbean literature and feminist literary studies.
                     </motion.p>
                   </div>
                 </motion.div>
@@ -556,8 +547,7 @@ export default function AuthorPage() {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     viewport={{ once: true }}
                   >
-                    "[Insert meaningful quote from the author about their writing, philosophy, or 'For the Life of
-                    Laetitia' specifically]"
+                    "The challenge is not to describe the world but to change it."
                   </motion.p>
                   <motion.footer
                     className="text-gray-600"
@@ -566,7 +556,7 @@ export default function AuthorPage() {
                     transition={{ duration: 0.6, delay: 1 }}
                     viewport={{ once: true }}
                   >
-                    — [Author Name]
+                    — Merle Hodge
                   </motion.footer>
                 </blockquote>
               </motion.div>
@@ -577,7 +567,7 @@ export default function AuthorPage() {
 
       {/* Footer */}
       <motion.footer
-        className="bg-gray-900 text-white py-8 mt-16"
+        className="bg-slate-100 text-white py-8 mt-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -585,13 +575,13 @@ export default function AuthorPage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p
-            className="text-gray-400"
+            className="text-slate-400"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            © 2024 For the Life of Laetitia - Educational Website Project
+            © 2025 Matthew Williams - For the Life of Laetitia Information Site
           </motion.p>
         </div>
       </motion.footer>
