@@ -219,7 +219,7 @@ export default function CharactersPage() {
                     </div>
                     {/* Character Image Placeholder */}
                     <motion.div
-                      className="w-24 h-24 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                      className="w-24 h-24 bg-gradient-to-br overflow-hidden from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{
@@ -234,7 +234,7 @@ export default function CharactersPage() {
                         transition: { duration: 0.5 },
                       }}
                     >
-                      {character.name.charAt(0)}
+                      <Image src={character.image} width={800} height={1200} className="w-full" alt={'Character'} />
                     </motion.div>
                   </div>
                 </CardHeader>
@@ -291,7 +291,7 @@ export default function CharactersPage() {
                   </motion.div>
 
                   {/* AI Image Placeholder */}
-                  <motion.div
+                  {/* <motion.div
                     className="mt-6 p-4 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-lg border border-blue-200"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -304,7 +304,7 @@ export default function CharactersPage() {
                     <p className="text-sm text-gray-600 text-center">
                       <Image src={character.image} width={500} height={700} alt={character.name} />
                     </p>
-                  </motion.div>
+                  </motion.div> */}
                 </CardContent>
               </Card>
             </motion.div>

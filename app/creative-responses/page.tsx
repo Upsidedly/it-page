@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge"
 import { BookOpen, ArrowLeft, Palette, PenTool, ImageIcon } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Image from "next/image"
+import { Span } from "next/dist/trace"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -60,29 +62,82 @@ export default function CreativeResponsesPage() {
 
   const featuredResponses = [
     {
-      title: "[Student Response Title 1]",
-      author: "[Student Name]",
-      type: "Essay",
-      description:
-        "[Brief description of the student's creative response and what themes or aspects of the book it explores]",
-      excerpt:
-        "[Include a compelling excerpt or summary of the student's work that showcases their understanding and creativity]",
+      "title": "Finding My Voice: A Reflection on Lacey's Journey",
+      "author": "Jada Thompson",
+      "type": "Essay",
+      "description":
+        "A personal reflection essay comparing the student's own experiences transitioning to high school with Laetitia's emotional journey. The piece explores themes of identity, resilience, and belonging.",
+      "excerpt":
+        "Like Lacey, I struggled with feeling out of place in a new environment, but what helped me was realizing that my story had value. Reading her journey reminded me that support and self-belief can grow from pain.",
+      data: <p className="text-justify">
+        When I first read For the <i>Life of Laetitia</i>, I did not expect to see myself in the story. Lacey lives in Trinidad and faces challenges very different from mine on the surface. But as I kept reading, I saw something that felt deeply familiar: the struggle to belong, the fear of being unseen, and the fight to keep going when no one expects you to.
+<br /><br />
+Lacey starts off with hope. She gets into a good school, and it feels like her life is finally opening up. But instead of being celebrated, she is sent away from the only home where she feels loved. She is thrown into a house where she is tolerated, not cherished. Her father, Cephas, imposes rules but never shows warmth. School is no better. Teachers like Mrs. Lopez make her feel small because of where she comes from. The pressure, the distance, and the loneliness pile up.
+<br /><br />
+At one point, Lacey gives up. She stops trying in school, she pulls back from others, and for a while, she loses herself. That moment reminded me of the times I have sat in class, overwhelmed by expectations I could not meet, and wondered if it would be easier to just stop caring. But what moved me most was what came next in her story: she breaks down, but she is not left broken. Her grandmother, Ma, brings her home. She is surrounded by love and reminded that her life matters.
+<br /><br />
+Like Lacey, I struggled with feeling out of place in a new environment, but what helped me was realizing that my story had value. Reading her journey reminded me that support and self-belief can grow from pain. Lacey goes back to school, but this time with purpose. Not because it is expected, but because she chooses to. That is when I realized that finding your voice is not about being loud. It is about knowing who you are and deciding that you deserve to be heard. Lacey's story helped me do that for myself.
+      </p>
     },
     {
-      title: "[Student Response Title 2]",
-      author: "[Student Name]",
-      type: "Artwork",
-      description: "[Description of the artistic piece and its connection to the book's themes or characters]",
-      excerpt: "[Artist's statement or description of their creative process and inspiration]",
+      "title": "Anjanee's Silence",
+      "author": "Micah Williams",
+      "type": "Artwork",
+      "description": "A charcoal portrait of Anjanee surrounded by fragmented mirrors, symbolizing the isolation and pressure she faces. The artwork focuses on the contrast between her quiet strength and emotional collapse.",
+      "excerpt": "I wanted to show how Anjanee was held together on the outside but slowly breaking on the inside. The mirrors reflect how people saw her, but none show how she truly felt.",
+      data: <Image src="./anjaneessilence.png" alt="Anjanee's Silence Portrait" width={500} height={800} className="h-full" />
     },
     {
-      title: "[Student Response Title 3]",
-      author: "[Student Name]",
-      type: "Poetry",
-      description: "[Description of the poem and how it relates to the book's themes or emotional impact]",
-      excerpt: "[A few lines from the poem or the poet's reflection on their work]",
-    },
+      "title": "For the Girl in the Back Row",
+      "author": "Leah Sinclair",
+      "type": "Poetry",
+      "description": "A poem written from Lacey's point of view, capturing her feelings of invisibility, loss, and rediscovery. The poem highlights her growth after Anjanee's death and her return home.",
+      "excerpt":
+        `I was the whisper in a noisy room,  
+         A barefoot girl in city shoes.  
+         But Ma's voice stitched my soul with thread,  
+         And I remembered who I was meant to be.`,
+      data: <p className="flex flex-col gap-5 text-left">{`She sat in the back row
+      Not because she was lazy,
+      Not because she was shy,
+      But because no one had ever
+      Reserved a front seat for girls like her.
+
+      Her skirt was too faded,
+      Her books too worn.
+      Her accent carried soil,
+      Not polish.
+      And so she shrank.
+
+      They mistook silence for weakness,
+      Misbehavior for rebellion,
+      But she was just tired—
+      Tired of pretending the ache
+      In her chest was normal.
+
+      One friend.
+      One kind word.
+      One teacher who said,
+      "You belong here,
+      Just as you are."
+
+      And something sparked.
+      A thread tugged at the edge
+      Of the unraveling fabric.
+
+      I was the whisper in a noisy room,
+      A barefoot girl in city shoes.
+      But Ma's voice stitched my soul with thread,
+      And I remembered who I was meant to be.
+
+      Now, she no longer hides.
+      She walks tall, not loud.
+      She does not need the front row.
+      She makes her own space,
+      And invites others in.`.split('\n\n').map((stanza, i) => <span key={`${i}i`}>{stanza.split('\n').map((line) => <>{line}<br /></>)}</span>)}</p>
+    }
   ]
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
@@ -336,9 +391,9 @@ export default function CreativeResponsesPage() {
                     {/* Placeholder for student work */}
                     <motion.div
                       className="mt-6 p-8 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-lg border border-blue-200 text-center"
-                      initial={{ opacity: 0, y: 30 }}
+                      initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 + 0.5 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
                       viewport={{ once: true }}
                       whileHover={{
                         scale: 1.02,
@@ -346,23 +401,13 @@ export default function CreativeResponsesPage() {
                       }}
                     >
                       <motion.div
-                        animate={{
-                          rotate: [0, 5, -5, 0],
-                          scale: [1, 1.05, 1],
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Number.POSITIVE_INFINITY,
-                          repeatDelay: 2,
-                        }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
+                        viewport={{ once: true }}
                       >
-                        <Palette className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                        {response.data}
                       </motion.div>
-                      <p className="text-gray-600">
-                        <strong>Student Work Display Area</strong>
-                        <br />
-                        [Space reserved for displaying the actual student response - artwork, essay excerpt, poem, etc.]
-                      </p>
                     </motion.div>
                   </CardContent>
                 </Card>
@@ -461,7 +506,7 @@ export default function CreativeResponsesPage() {
 
       {/* Footer */}
       <motion.footer
-        className="bg-gray-900 text-white py-8 mt-16"
+        className="bg-slate-100 text-white py-8 mt-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -469,13 +514,13 @@ export default function CreativeResponsesPage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p
-            className="text-gray-400"
+            className="text-slate-400"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            © 2024 For the Life of Laetitia - Educational Website Project
+            © 2025 Matthew Williams - For the Life of Laetitia Information Site
           </motion.p>
         </div>
       </motion.footer>
