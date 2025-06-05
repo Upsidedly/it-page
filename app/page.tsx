@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, Users, Palette, User } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -102,8 +103,10 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              A compelling literary journey that explores themes of identity, resilience, and the human spirit. Discover
-              the story that has captivated readers and sparked meaningful discussions in classrooms worldwide.
+              A beautiful story of a young Trinidadian girl navigating high school
+              and the other side of her family, captivating
+              readers and sparking discussions in classrooms
+              across the Caribbean.
             </motion.p>
           </motion.div>
 
@@ -123,7 +126,7 @@ export default function HomePage() {
               }}
             >
               <motion.div
-                className="w-80 h-96 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg shadow-2xl"
+                className="w-80 h-[29rem] bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg shadow-2xl"
                 whileHover={{
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                   transition: { duration: 0.3 },
@@ -131,21 +134,7 @@ export default function HomePage() {
               >
                 <div className="absolute inset-4 bg-white/10 rounded border border-white/20 flex items-center justify-center">
                   <div className="text-center text-white">
-                    <motion.div
-                      animate={{
-                        rotate: [0, 10, -10, 0],
-                        scale: [1, 1.1, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Number.POSITIVE_INFINITY,
-                        repeatDelay: 3,
-                      }}
-                    >
-                      <BookOpen className="h-16 w-16 mx-auto mb-4" />
-                    </motion.div>
-                    <p className="text-lg font-semibold">Book Cover</p>
-                    <p className="text-sm opacity-80">Image Placeholder</p>
+                    <Image alt="Book Cover" src="/flol.webp" width={400} height={600} className="w-full h-full" />
                   </div>
                 </div>
               </motion.div>
@@ -180,9 +169,7 @@ export default function HomePage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 1.8 }}
                   >
-                    [Insert compelling book summary here - This space is reserved for a detailed synopsis of "For the
-                    Life of Laetitia" that will engage 4th form students and provide them with a clear understanding of
-                    the plot, main conflicts, and themes.]
+                    Laetitia “Lacey” Johnson is a young girl from rural Balatier whose life changes when she earns a spot at a top secondary school in La Puerta. With her mother living in New York and her father, Cephas, suddenly showing interest only after her success, Lacey is sent to live with him and his new family in town. She struggles to feel at home, rebels against her father's rules, and begins to fall behind in school. At school, she faces judgment for being from the countryside, and while some teachers are kind, others treat her unfairly. Lacey finds support in her English teacher and her strict but caring form teacher. Her best friend, Anjanee, deals with far worse—her family doesn’t value girls’ education, and she’s overwhelmed by work and stress. After Anjanee's tragic suicide, Lacey breaks down emotionally and is sent back to her grandmother's home to recover.
                   </motion.p>
                   <motion.p
                     className="mb-4"
@@ -190,16 +177,14 @@ export default function HomePage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 2 }}
                   >
-                    [Additional summary content - Include information about the setting, time period, and what makes
-                    this book particularly relevant and interesting for young adult readers.]
+                    The story is set in a modern Caribbean context and shows what life is like for students from poorer, rural backgrounds. The book highlights class and racial prejudice, mental health struggles, the pressures of school, and the value of supportive adults. It also explores friendship, grief, and the fight for education, especially for girls.
                   </motion.p>
                   <motion.p
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 2.2 }}
                   >
-                    [Concluding summary paragraph - Highlight the book's impact and why it's an important addition to
-                    the curriculum.]
+                    For the Life of Laetitia is an important and relatable story that shows how hard life can get, but also how healing and hope are possible. It helps students understand real issues faced by others their age and encourages them to make the most of their own opportunities. It's a powerful read for any young person finding their place in the world.
                   </motion.p>
                 </motion.div>
               </CardContent>
@@ -291,10 +276,10 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             {[
-              { title: "Identity", description: "Exploring self-discovery and personal growth" },
-              { title: "Resilience", description: "Overcoming challenges and adversity" },
-              { title: "Community", description: "The importance of relationships and belonging" },
-              { title: "Hope", description: "Finding light in difficult circumstances" },
+              { title: "Identity", description: "Discovering who you are while dealing with change and pressure" },
+              { title: "Resilience", description: "Pushing through emotional pain, family struggles, and school challenges" },
+              { title: "Belonging", description: "Feeling out of place and learning where you truly feel at home" },
+              { title: "Injustice", description: "Facing class prejudice, racism, and gender inequality in everyday life" },
             ].map((theme, index) => (
               <motion.div
                 key={index}
@@ -335,7 +320,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <motion.footer
-        className="bg-gray-900 text-white py-8"
+        className="bg-slate-100 text-white py-8"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -343,13 +328,13 @@ export default function HomePage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p
-            className="text-gray-400"
+            className="text-slate-400"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            © 2024 For the Life of Laetitia - Educational Website Project
+            © 2025 Matthew Williams - For the Life of Laetitia Information Site
           </motion.p>
         </div>
       </motion.footer>
